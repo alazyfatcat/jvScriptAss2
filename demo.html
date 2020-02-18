@@ -1,0 +1,60 @@
+<html>
+<head>
+    <style type="text/css">
+        .imgStyle
+        {
+            width:100px;
+            height:100px;
+            border:3px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img id="mainImage" height="500px" width="540x" 
+            src="images/pic1.jpg" style="border:3px solid grey"/>
+    </figure>
+    
+    <ul id="divId" onclick="changeImageOnClick(event)">
+        <li><img class="imgStyle" src="images/flowers-pink-small.jpg" alt="" width="240" height="160" /></li>
+        <li><img class="imgStyle" src="images/flowers-purple-small.jpg" alt="" width="240" height="160" /></li>
+        <li><img class="imgStyle" src="images/flowers-red-small.jpg" alt="" width="240" height="160" /></li>
+        <li><img class="imgStyle" src="images/flowers-white-small.jpg" alt="" width="240" height="160" /></li>
+        <li><img class="imgStyle" src="images/flowers-yellow-small.jpg" alt="" width="240" height="160" /></li>
+    </ul>
+    <script type="text/javascript">
+
+        // var images = document.getElementById("divId").getElementsByTagName("img");
+
+        // for (var i = 0; i < images.length; i++) {
+        //     images[i].onmouseover = function () {
+        //         this.style.cursor = 'hand';
+        //         this.style.borderColor = 'red';
+        //     }
+        //     images[i].onmouseout = function () {
+        //         this.style.cursor = 'pointer';
+        //         this.style.borderColor = 'grey';
+        //     }
+        // }
+        
+        function changeImageOnClick(event) 
+        {
+            event = event || window.event;
+            var targetElement = event.target || event.srcElement;
+
+            if(targetElement.tagName == "IMG")
+            {
+                mainImage.src = targetElement.getAttribute("src");    
+            }
+        }
+        
+            
+        
+       
+
+
+
+        
+    </script>
+</body>
+</html>
